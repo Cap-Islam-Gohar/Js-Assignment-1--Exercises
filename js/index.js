@@ -95,6 +95,7 @@ function makeFrameOn(el, src, callback){
             let css = document.createElement("link");
             css.type = "text/css";
             css.rel = "stylesheet";
+            let links = document.head.querySelectorAll("link");
             css.href = links[links.length -1].href;
             e.target.contentDocument.head.appendChild(css);        
 
