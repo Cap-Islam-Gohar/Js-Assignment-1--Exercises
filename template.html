@@ -1,0 +1,53 @@
+<div x-data="{show: false}" class="py-10 border-b-2 border-[#2e2e2e] flex flex-col gap-y-3 h-auto">
+        
+    <div x-on:click="show = ! show"  class="flex justify-between cursor-pointer">
+        <h2 class="font-extrabold">Questions <span x-text="number"></span></h2>
+        <div>
+            <svg x-show="!show" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 md:size-6">
+                <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
+            </svg>
+            <svg x-show="show" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 md:size-6">
+                <path fill-rule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>			
+
+    <div x-show="show" x-data="{ currentTab: 1 }" x-init="$watch('currentTab', () => console.log(currentTab))" class="bg-[#1E1E1E] rounded-md overflow-hidden">
+        
+        <ul class="flex bg-[#2E2E2E]">
+            <li class="px-8 py-2 cursor-pointer border-red-400 rounded-t-sm" :class="currentTab === 1 && 'bg-[#1E1E1E] border-t'" @click="currentTab = 1">Q</li>
+            <li class="px-8 py-2 cursor-pointer border-red-400 rounded-t-sm" :class="currentTab === 2 && 'bg-[#1E1E1E] border-t'" @click="currentTab = 2">Html</li>
+            <li class="px-8 py-2 cursor-pointer border-red-400 rounded-t-sm" :class="currentTab === 3 && 'bg-[#1E1E1E] border-t'" @click="currentTab = 3">Js</li>
+            <li class="px-8 py-2 cursor-pointer border-red-400 rounded-t-sm text-green-400" :class="currentTab === 4 && 'bg-[#1E1E1E] border-t'" @click="currentTab = 4">Run</li>
+        </ul>
+
+        <div class="px-2">
+            <div x-show="currentTab === 1" class="py-4">
+                <h2 class="md:font-bold">
+                    Write a program that allow to user enter number then print it:
+                </h2>
+                <div class="text-xs md:text-sm mt-2">
+                    <h3 class="text-red-400">Example :</h3>
+                    <div class="px-4">
+                        <p>Input : 5</p>
+                        <p class="text-green-400">Output : 5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div x-show="currentTab === 2" class="editor overflow-x-auto">
+                
+            </div>
+
+            <div x-show="currentTab === 3" class="editor overflow-x-auto">
+                
+            </div>
+
+            <div x-show="currentTab === 4" class="p-4">
+            
+            </div>
+
+        </div>
+
+    </div>	
+</div>
