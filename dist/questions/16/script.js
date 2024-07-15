@@ -27,7 +27,7 @@ button.addEventListener("click", () => {
         res = `character "${character}" is ${type}`;
 
     }else{
-        res = `Please Inter valid character`;
+        res = `Please Enter valid character`;
     }
 
     p.innerHTML = res;

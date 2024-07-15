@@ -18,7 +18,7 @@ button.addEventListener("click", () => {
     if(numbers.length === inputs.length){
         res = `${numbers[0]}^${numbers[1]} = ${Math.pow(...numbers)}`;
     }else{
-        res = `Please Inter valid numbers`;
+        res = `Please Enter valid numbers`;
     }
 
     p.innerHTML = res;

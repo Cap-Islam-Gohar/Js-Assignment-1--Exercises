@@ -28,12 +28,12 @@ button.addEventListener("click", () => {
                 break;
         
             default:
-                res = `Please Inter Differnet numbers`;
+                res = `Please Enter Differnet numbers`;
                 break;
         }
 
     }else{
-        res = `Please Inter valid numbers`;
+        res = `Please Enter valid numbers`;
     }
 
     p.innerHTML = res;

@@ -30,7 +30,7 @@ button.addEventListener("click", () => {
         res = `Total marks = ${total}, Average Marks =${average}, Percentage =${percentage}%`;
 
     }else{
-        res = `Please Inter valid numbers , Or Valid Mark less than or equal 100`;
+        res = `Please Enter valid numbers , Or Valid Mark less than or equal 100`;
     }
 
     p.innerHTML = res;

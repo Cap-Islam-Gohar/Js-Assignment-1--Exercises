@@ -21,12 +21,12 @@ button.addEventListener("click", () => {
                 break;
         
             default:
-                res = `please inter number other than 'zero' `;
+                res = `please Enter number other than 'zero' `;
                 break;
         }    
         
     }else{
-        res = `Please Inter valid numbers`;
+        res = `Please Enter valid numbers`;
     }
 
     p.innerHTML = res;

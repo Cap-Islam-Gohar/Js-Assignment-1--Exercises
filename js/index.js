@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 callback(e); 
                 
             }else{
-                el.innerHTML = 'you didnt anser this question';
+                el.innerHTML = 'you didnt answer this question';
             }    
         });
     }
@@ -141,9 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     this.$watch('defaultIndex', (index) => {
                         if(index == 3){
                             this.$nextTick(() => {
-                                let frame = this.panels[3].firstElementChild;
-                                let height = frame?.contentDocument?.body.offsetHeight + 50;
-                                frame?.setAttribute("height", height + "px");                                    
+                                this.getFrameHeight();
                             });
                         }
                     });
@@ -152,6 +150,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     ['x-text'](){
                         return this.number;
                     }
+                },
+                getFrameHeight(oldHeight){  
+                    let frame = this.panels[3].firstElementChild     
+                    let loop = setTimeout(() => {
+                        let height = frame?.contentDocument?.body.scrollHeight;
+                        if(oldHeight === undefined && (height === undefined || height === 0)){
+                            this.getFrameHeight(height);
+                        }else{
+                            height > oldHeight ? height = oldHeight : oldHeight;
+                            frame?.setAttribute("height", height + 50 + "px"); 
+                            clearTimeout(loop);
+                        }
+                    }, 1000);
                 },
                 currentTab (el) {
                     return this.defaultIndex == this.tabs.indexOf(el);

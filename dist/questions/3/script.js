@@ -20,7 +20,7 @@ button.addEventListener("click", () => {
         res = `Max Number is ${Math.max(...numbers)}`;
         
     }else{
-        res = `Please Inter valid numbers`;
+        res = `Please Enter valid numbers`;
     }
 
     p.innerHTML = res;

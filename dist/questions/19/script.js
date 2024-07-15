@@ -12,7 +12,7 @@ button.addEventListener("click", () => {
     if(!isNaN(number)){
 
         if(number == 0){
-            res = `please inter number other than 'zero' `;
+            res = `please Enter number other than 'zero' `;
         }else if(number < 0){
             res = `${number} is negative number`;
         }else if(number > 0){
@@ -20,7 +20,7 @@ button.addEventListener("click", () => {
         }        
         
     }else{
-        res = `Please Inter valid numbers`;
+        res = `Please Enter valid numbers`;
     }
 
     p.innerHTML = res;

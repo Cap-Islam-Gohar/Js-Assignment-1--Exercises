@@ -12,7 +12,7 @@ button.addEventListener("click", () => {
     if(!isNaN(number)){
         res = `Your number is ${number}`;
     }else{
-        res = `Please Inter valid number`;
+        res = `Please Enter valid number`;
     }
 
     p.innerHTML = res;
